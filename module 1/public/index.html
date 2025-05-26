@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Event Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Internal CSS */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            background-color: #f5f7fa;
+            color: #333;
+        }
+        
+        /* Welcome banner styling */
+        #welcomeBanner {
+            background-color: #1e88e5;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="help.html" target="_blank">Help</a></li>
+        </ul>
+    </nav>
+
+    <!-- Welcome Message -->
+    <div id="welcomeBanner">
+        <h1>Welcome to Our Community Portal!</h1>
+        <p>Discover exciting events in your neighborhood. <span style="color: #ffeb3b; font-weight: bold;">Special offer: First event free for new members!</span></p>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <section id="events">
+            <h2 class="highlight">Upcoming Community Events</h2>
+            
+            <!-- Image Gallery -->
+            <div class="gallery-container">
+                <h3>Past Event Highlights</h3>
+                <table class="event-gallery">
+                    <tr>
+                        <td>
+                            <img src="https://via.placeholder.com/300x200?text=Summer+Festival" alt="Summer Festival" title="Annual Summer Festival" class="gallery-image" ondblclick="enlargeImage(this)">
+                            <p class="image-caption">Annual Summer Festival 2023</p>
+                        </td>
+                        <td>
+                            <img src="https://via.placeholder.com/300x200?text=Art+Exhibition" alt="Art Exhibition" title="Community Art Show" class="gallery-image" ondblclick="enlargeImage(this)">
+                            <p class="image-caption">Community Art Exhibition</p>
+                        </td>
+                        <td>
+                            <img src="https://via.placeholder.com/300x200?text=Charity+Run" alt="Charity Run" title="5K Charity Run" class="gallery-image" ondblclick="enlargeImage(this)">
+                            <p class="image-caption">Annual 5K Charity Run</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="https://via.placeholder.com/300x200?text=Workshop" alt="Workshop" title="Gardening Workshop" class="gallery-image" ondblclick="enlargeImage(this)">
+                            <p class="image-caption">Gardening Workshop</p>
+                        </td>
+                        <td>
+                            <img src="https://via.placeholder.com/300x200?text=Concert" alt="Concert" title="Community Band Concert" class="gallery-image" ondblclick="enlargeImage(this)">
+                            <p class="image-caption">Community Band Concert</p>
+                        </td>
+                        <td>
+                            <img src="https://via.placeholder.com/300x200?text=Farmer's+Market" alt="Farmer's Market" title="Weekly Market" class="gallery-image" ondblclick="enlargeImage(this)">
+                            <p class="image-caption">Weekly Farmer's Market</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Event Registration Form -->
+            <div class="form-container">
+                <h3>Register for Events</h3>
+                <form id="registrationForm" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" required autofocus>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone:</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" onblur="validatePhone(this)">
+                        <span id="phoneError" class="error-message"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="eventDate">Event Date:</label>
+                        <input type="date" id="eventDate" name="eventDate" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="eventType">Event Type:</label>
+                        <select id="eventType" name="eventType" onchange="showEventFee(this)">
+                            <option value="">Select an event</option>
+                            <option value="workshop">Workshop</option>
+                            <option value="concert">Concert</option>
+                            <option value="sports">Sports Event</option>
+                            <option value="market">Farmer's Market</option>
+                        </select>
+                        <span id="eventFee"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Special Requests:</label>
+                        <textarea id="message" name="message" placeholder="Any special requirements?" onkeyup="countChars(this)"></textarea>
+                        <div id="charCount">0/200 characters</div>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn" onclick="showConfirmation()">Register</button>
+                    
+                    <output id="formOutput" class="output-message"></output>
+                </form>
+            </div>
+
+            <!-- Video Section -->
+            <div class="video-container">
+                <h3>Event Promo Video</h3>
+                <video id="eventVideo" width="100%" controls oncanplay="videoReady()">
+                    <source src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p id="videoStatus"></p>
+            </div>
+
+            <!-- Geolocation Section -->
+            <div class="geo-container">
+                <h3>Find Events Near You</h3>
+                <button id="geoBtn" class="geo-btn">Find Nearby Events</button>
+                <div id="locationInfo"></div>
+            </div>
+
+            <!-- Preferences Section -->
+            <div class="preferences-container">
+                <h3>Your Preferences</h3>
+                <button id="clearPrefs" class="pref-btn">Clear Preferences</button>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <p>Community Center<br>123 Main Street<br>Your City, ST 12345</p>
+                <p>Phone: (555) 123-4567</p>
+                <p>Email: events@community.org</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <p>&copy; 2023 Local Community Event Portal. All rights reserved.</p>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // Handle beforeunload event for form
+        window.addEventListener('beforeunload', function(e) {
+            const form = document.getElementById('registrationForm');
+            const inputs = form.querySelectorAll('input, textarea');
+            let hasContent = false;
+            
+            inputs.forEach(input => {
+                if (input.value.trim() !== '') {
+                    hasContent = true;
+                }
+            });
+            
+            if (hasContent) {
+                e.preventDefault();
+                e.returnValue = 'You have unsaved changes. Are you sure you want to leave?';
+            }
+        });
+
+        // Load saved preferences
+        window.addEventListener('DOMContentLoaded', function() {
+            const savedEventType = localStorage.getItem('preferredEventType');
+            if (savedEventType) {
+                const eventTypeSelect = document.getElementById('eventType');
+                eventTypeSelect.value = savedEventType;
+            }
+        });
+    </script>
+</body>
+</html>

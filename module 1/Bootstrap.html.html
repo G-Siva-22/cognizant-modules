@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 5 Exercises</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        .exercise {
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .exercise-title {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #dee2e6;
+        }
+    </style>
+</head>
+<body class="container py-5">
+    <h1 class="text-center mb-5">Bootstrap 5 Exercises</h1>
+
+    <!-- Exercise 1.1: Basic HTML page with Bootstrap CDN -->
+    <div class="exercise">
+        <h2 class="exercise-title">Exercise 1.1: Basic HTML page with Bootstrap CDN</h2>
+        <p>This entire page is using Bootstrap 5 via CDN as shown in the head section.</p>
+    </div>
+
+    <!-- Exercise 3.1: Responsive grid layout -->
+    <div class="exercise">
+        <h2 class="exercise-title">Exercise 3.1: Responsive grid layout</h2>
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 mb-3">
+                <div class="p-3 border bg-light">Column 1 (stacks on mobile)</div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-3">
+                <div class="p-3 border bg-light">Column 2 (2/row on tablet)</div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-3">
+                <div class="p-3 border bg-light">Column 3 (3/row on desktop)</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exercise 4.1: Two-column layout with sidebar -->
+    <div class="exercise">
+        <h2 class="exercise-title">Exercise 4.1: Two-column layout with sidebar</h2>
+        <div class="row">
+            <aside class="col-md-3 mb-3">
+                <div class="p-3 bg-primary text-white rounded">
+                    <h3>Sidebar</h3>
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><a href="#" class="nav-link text-white">Link 1</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link text-white">Link 2</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link text-white">Link 3</a></li>
+                    </ul>
+                </div>
+            </aside>
+            <main class="col-md-9">
+                <div class="p-3 bg-light rounded">
+                    <h1>Main Content</h1>
+                    <p>This is the main content area that takes up more space.</p>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Exercise 5.1: Centering content -->
+    <div class="exercise">
+        <h2 class="exercise-title">Exercise 5.1: Centering content</h2>
+        <div class="row justify-content-center align-items-center bg-light py-5" style="height: 200px;">
+            <div class="col-4 text-center">
+                <div class="p-3 bg-white border rounded">
+                    Centered Content
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exercise 7.1: Responsive navbar -->
+    <div class="exercise">
+        <h2 class="exercise-title">Exercise 7.1: Responsive navbar</h2>
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">My Site</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav d-flex flex-column flex-md-row">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Exercise 8.1: Registration form -->
+    <div class="exercise">
+        <h2 class="exercise-title">Exercise 8.1: Registration form</h2>
+        <form class="row g-3">
+            <div class="col-md-6">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstName" required>
+            </div>
+            <div class="col-md-6">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastName" required>
+            </div>
+            <div class="col-12">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="col-12">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" required>
+            </div>
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="terms">
+                    <label class="form-check-label" for="terms">
+                        Agree to terms and conditions
+                    </label>
+                </div>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Register</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Exercise 9.1: Buttons -->
+    <div class="exercise">
+        <h2 class="exercise-title">Exercise 9.1: Buttons</h2>
+        <div class="d-flex flex-wrap gap-2">
+            <button class="btn btn-primary">Primary</button>
+            <button class="btn btn-secondary">Secondary</button>
+            <button class="btn btn-success">Success</button>
+            <button class="btn btn-danger">Danger</button>
+            <button class="btn btn-warning">Warning</button>
+            <button class="btn btn-info">Info</button>
+            <button class="btn btn-light">Light</button>
+            <button class="btn btn-dark">Dark</button>
+            <button class="btn btn-link">Link</button>
+            <button class="btn btn-outline-primary">Outline Primary</button>
+            <button class="btn btn-outline-secondary">Outline Secondary</button>
+        </div>
+    </div>
+
+    <!-- Exercise 10.1: Responsive navbar with search -->
+    <div class="exercise">
+        <h2 class="exercise-title">Exercise 10.1: Responsive navbar</h2>
+        <nav class="navbar navbar-expand-lg bg-primary navbar-dark mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <i class="bi bi-bootstrap-fill"></i> Brand
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSearch">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSearch">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pricing</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search">
+                        <button class="btn btn-light" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Exercise 11.1: Profile card -->
+    <div class="exercise">
+        <h2 class="exercise-title">Exercise 11.1: Profile card</h2>
+        <div class="card" style="width: 18rem;">
+            <img src="https://via.placeholder.com/300" class="card-img-top" alt="Profile">
+            <div class="card-body">
+                <h5 class="card-title">John Doe</h5>
+                <p class="card-text">Web Developer with 5 years of experience building responsive websites.</p>
+                <a href="#" class="btn btn-primary">View Profile</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exercise 18.1: Modal popup -->
+    <div class="exercise">
+        <h2 class="exercise-title">Exercise 18.1: Modal popup</h2>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Launch Demo Modal
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        This is a Bootstrap modal popup example.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exercise 17.1: Bootstrap Icons -->
+    <div class="exercise">
+        <h2 class="exercise-title">Exercise 17.1: Bootstrap Icons</h2>
+        <div class="d-flex justify-content-center gap-3 fs-1">
+            <a href="#"><i class="bi bi-facebook text-primary"></i></a>
+            <a href="#"><i class="bi bi-twitter text-info"></i></a>
+            <a href="#"><i class="bi bi-instagram text-danger"></i></a>
+            <a href="#"><i class="bi bi-linkedin text-primary"></i></a>
+            <a href="#"><i class="bi bi-github text-dark"></i></a>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle with Popper CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

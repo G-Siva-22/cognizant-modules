@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help - Community Event Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #1e88e5;
+            border-bottom: 2px solid #1e88e5;
+            padding-bottom: 10px;
+        }
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+        .question {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        .answer {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Community Event Portal Help</h1>
+    
+    <div class="faq-item">
+        <div class="question">How do I register for an event?</div>
+        <div class="answer">
+            Navigate to the Events section and fill out the registration form with your details. 
+            Select the event you want to attend and click the Register button.
+        </div>
+    </div>
+    
+    <div class="faq-item">
+        <div class="question">Is there a cost to attend events?</div>
+        <div class="answer">
+            Some events have fees while others are free. The fee (if any) will be displayed when 
+            you select an event type in the registration form.
+        </div>
+    </div>
+    
+    <div class="faq-item">
+        <div class="question">How can I find events near me?</div>
+        <div class="answer">
+            Click the "Find Nearby Events" button in the Events section to see events based on 
+            your current location. You'll need to allow location access in your browser.
+        </div>
+    </div>
+    
+    <div class="faq-item">
+        <div class="question">Can I cancel my registration?</div>
+        <div class="answer">
+            Yes, please contact us at events@community.org with your registration details to 
+            request cancellation.
+        </div>
+    </div>
+    
+    <div class="faq-item">
+        <div class="question">How do I save my event preferences?</div>
+        <div class="answer">
+            Your preferred event type is automatically saved when you select it in the form. 
+            You can clear your preferences using the "Clear Preferences" button.
+        </div>
+    </div>
+</body>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.question');
+        
+        question.addEventListener('click', function() {
+            // Close other open items
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item && otherItem.classList.contains('active')) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            
+            // Toggle current item
+            item.classList.toggle('active');
+        });
+    });
+});
+</script>
+</html>
